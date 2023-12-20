@@ -11,11 +11,11 @@ def create_table_if_not_exists(conn, station):
     # Create the table if not exists
     cursor.execute(f'''
         CREATE TABLE IF NOT EXISTS {station.table_name} (
-            date TEXT,
-            time TEXT,
+            date DATE,
+            time TIME,
             artist TEXT,
-            title TEXT,
-            UNIQUE(date, time, artist, title)
+            song_name TEXT,
+            UNIQUE(date, time, artist, song_name)
         );
     ''')
 
